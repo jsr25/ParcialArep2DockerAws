@@ -27,6 +27,7 @@ para generar el contenedor deben ejecutar
 
 Para usar la aplicacion deberan entrart a localhost/atan?value=<numero> o localhost/ln?value=<numero>
 ## video 
+![](./img/maquinaaws.png)
 https://youtu.be/3WMtuh5fw4o en este enlace encontrara el video demostracion de la apliacacion montada en ec2 aws con dokcer
 
 ### Javadoc
