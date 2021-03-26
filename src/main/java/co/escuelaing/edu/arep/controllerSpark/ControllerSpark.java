@@ -12,17 +12,17 @@ public class ControllerSpark {
     public static void main(String[] args) {
         port(getPort());
 
-        get("/atan/:value",(req,res)-> {
+        get("/atan",(req,res)-> {
             CalculApi calculApi = new CalculadoraApiImpl();
-            Double result =calculApi.atan(Double.parseDouble(req.params(":value")));
-            String json = "{\"operation\":\"atan\",\"input\":"+req.params(":value")+",\"output\":"+result+"}";
+            Double result =calculApi.atan(Double.parseDouble(req.queryParams("value")));
+            String json = "{\"operation\":\"atan\",\"input\":"+req.queryParams("value")+",\"output\":"+result+"}";
            return new Gson().toJson(json);
         });
 
-        get("/ln/:value",(req,res)-> {
+        get("/ln",(req,res)-> {
             CalculApi calculApi = new CalculadoraApiImpl();
-            Double result =calculApi.ln(Double.parseDouble(req.params(":value")));
-            String json = "{\"operation\":\"ln\",\"input\":"+req.params(":value")+",\"output\":"+result+"}";
+            Double result =calculApi.ln(Double.parseDouble(req.queryParams("value")));
+            String json = "{\"operation\":\"ln\",\"input\":"+req.queryParams("value")+",\"output\":"+result+"}";
             return new Gson().toJson(json);
         });
     }
